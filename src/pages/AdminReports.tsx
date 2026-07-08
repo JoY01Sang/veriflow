@@ -425,7 +425,7 @@ export function AdminReports() {
           </div>
         ) : (
           <div className="space-y-2">
-            {feed.map((entry, index) => (
+            {feed.map((entry) => (
               <div
                 key={entry.id}
                 className="rounded-lg border border-gray-200 bg-white p-4 hover:bg-gray-50 transition-colors"

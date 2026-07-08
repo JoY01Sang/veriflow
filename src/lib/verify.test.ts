@@ -25,7 +25,7 @@ async function signFile(bytes: Uint8Array) {
     true,
     ['sign', 'verify'],
   )
-  const hashBuffer = await crypto.subtle.digest('SHA-256', bytes)
+  const hashBuffer = await crypto.subtle.digest('SHA-256', bytes as BufferSource)
   const hashHex = Array.from(new Uint8Array(hashBuffer))
     .map((b) => b.toString(16).padStart(2, '0'))
     .join('')
