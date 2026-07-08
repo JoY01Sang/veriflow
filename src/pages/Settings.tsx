@@ -38,7 +38,7 @@ export function Settings() {
     const { error: updateError } = await supabase
       .from('profiles')
       .update({ full_name: trimmed })
-      .eq('id', profile.id)
+      .eq('id', profile!.id)
     setSaving(false)
 
     if (updateError) {

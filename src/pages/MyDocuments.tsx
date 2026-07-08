@@ -157,7 +157,6 @@ export function MyDocuments() {
                     {doc.status === 'pending' && '⏳'}
                     {doc.status === 'approved' && '✓'}
                     {doc.status === 'rejected' && '✕'}
-                    {doc.status === 'waiting' && '⏸'}
                     {doc.status}
                   </span>
                   {doc.status === 'rejected' && (
