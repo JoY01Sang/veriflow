@@ -34,6 +34,9 @@ const committeeSlots: { key: CommitteeSlotKey; label: string; role: UserRole }[]
   { key: 'advisor_id', label: 'Advisor', role: 'advisor' },
   { key: 'committee_member_1_id', label: 'Committee Member 1', role: 'committee_member' },
   { key: 'committee_member_2_id', label: 'Committee Member 2', role: 'committee_member' },
+  { key: 'committee_member_3_id', label: 'Committee Member 3', role: 'committee_member' },
+  { key: 'committee_member_4_id', label: 'Committee Member 4', role: 'committee_member' },
+  { key: 'committee_member_5_id', label: 'Committee Member 5', role: 'committee_member' },
   { key: 'department_chair_id', label: 'Dept Chair', role: 'department_chair' },
   { key: 'graduate_school_id', label: 'Grad School', role: 'graduate_school' },
 ]
@@ -42,6 +45,9 @@ type CommitteeSlotKey =
   | 'advisor_id'
   | 'committee_member_1_id'
   | 'committee_member_2_id'
+  | 'committee_member_3_id'
+  | 'committee_member_4_id'
+  | 'committee_member_5_id'
   | 'department_chair_id'
   | 'graduate_school_id'
 
@@ -93,7 +99,7 @@ export function AdminReports() {
     const { data } = await supabase
       .from('profiles')
       .select(
-        'id, full_name, email, role, created_at, advisor_id, committee_member_1_id, committee_member_2_id, department_chair_id, graduate_school_id',
+        'id, full_name, email, role, created_at, advisor_id, committee_member_1_id, committee_member_2_id, committee_member_3_id, committee_member_4_id, committee_member_5_id, department_chair_id, graduate_school_id',
       )
       .order('created_at', { ascending: true })
     setUsers((data as Profile[]) ?? [])
@@ -168,6 +174,9 @@ export function AdminReports() {
       p_advisor_id: slot === 'advisor_id' ? value || null : student.advisor_id,
       p_committee_member_1_id: slot === 'committee_member_1_id' ? value || null : student.committee_member_1_id,
       p_committee_member_2_id: slot === 'committee_member_2_id' ? value || null : student.committee_member_2_id,
+      p_committee_member_3_id: slot === 'committee_member_3_id' ? value || null : student.committee_member_3_id,
+      p_committee_member_4_id: slot === 'committee_member_4_id' ? value || null : student.committee_member_4_id,
+      p_committee_member_5_id: slot === 'committee_member_5_id' ? value || null : student.committee_member_5_id,
       p_department_chair_id: slot === 'department_chair_id' ? value || null : student.department_chair_id,
       p_graduate_school_id: slot === 'graduate_school_id' ? value || null : student.graduate_school_id,
     })

@@ -12,12 +12,15 @@ interface ChainMember {
   role: UserRole
 }
 
-type ChainSlotKey = 'advisor_id' | 'committee_member_1_id' | 'committee_member_2_id' | 'department_chair_id' | 'graduate_school_id'
+type ChainSlotKey = 'advisor_id' | 'committee_member_1_id' | 'committee_member_2_id' | 'committee_member_3_id' | 'committee_member_4_id' | 'committee_member_5_id' | 'department_chair_id' | 'graduate_school_id'
 
 const CHAIN_SLOTS: { key: ChainSlotKey; label: string }[] = [
   { key: 'advisor_id', label: 'Advisor' },
   { key: 'committee_member_1_id', label: 'Committee Member 1' },
   { key: 'committee_member_2_id', label: 'Committee Member 2' },
+  { key: 'committee_member_3_id', label: 'Committee Member 3' },
+  { key: 'committee_member_4_id', label: 'Committee Member 4' },
+  { key: 'committee_member_5_id', label: 'Committee Member 5' },
   { key: 'department_chair_id', label: 'Department Chair' },
   { key: 'graduate_school_id', label: 'Graduate School' },
 ]
